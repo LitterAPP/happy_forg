@@ -1,0 +1,8 @@
+<view class='item' style='height:{{W-40}}px;'> 
+  <image class='book-cover' mode='aspectFit' style='width:{{W-40}}px;height:{{W-40}}px;' src='/images/xiaoqingwa.jpg'></image>
+   <image class='tag-image' src='/images/doing.png'></image>
+  <image class='time-dot' src='/images/gift_icon.png'></image>
+  <image class='right-arrow' src='/images/arrow-right.png'></image>
+  <text class='book-title'>小青蛙趣味朗读，还可赢取丰厚奖品</text>
+  <text class='activity-time'>活动时间：永久</text>
+</view>

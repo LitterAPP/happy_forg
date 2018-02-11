@@ -1,0 +1,12 @@
+.item{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-bottom:5px; 
+}
+
+.item-1{
+  height: 40px;
+  width: 100%;
+}

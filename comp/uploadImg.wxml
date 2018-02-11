@@ -1,0 +1,21 @@
+<view class='container'>
+  <view wx:for='{{groups}}' wx:key='{{id}}' class='input-del-item'>
+     <view class='image-item' style='width:{{w}}px;'>
+      <view class='logopreview' wx:if='{{item.logo}}'>
+        <image catchtap='preview' mode='aspectFit' style='height:{{h/2}}px;width:{{w/2}}px;' src='{{item.logo}}' data-index='{{index}}'></image>
+        <image catchtap='deleteLogo' wx:if='{{admin && deleteImgSrc}}' class='deleteimg' src='{{deleteImgSrc}}' data-index='{{index}}'></image>
+        <button catchtap='deleteLogo' data-index='{{index}}' wx:if='{{admin && !deleteImgSrc}}' class='deletebtn' size='min' type='warn'>删除</button>
+        <text class='infoText'>{{index+1}}/{{max}}</text>
+      </view> 
+    </view> 
+    <!---
+    <view class='input-add-item' wx:if='{{max > groups.length}}'>
+      <text class='addInputText' wx:if='{{index == (groups.length-1) }}' catchtap='addInput'>添加</text>
+      <text wx:if='{{groups.length > 1}}' data-index='{{index}}' class='deleteInputText' catchtap='deleteInput'>删除</text> 
+    </view>
+    -->
+  </view>   
+   <view class='bannerupload' wx:if='{{max > groups.length || groups.length == 0}}'>
+        <text catchtap='uploadLogo' data-index='{{index}}' style='font-size:14px;color:#ccc;height:{{h/4}}px;line-height:{{h/4}}px;width:{{w}}px;display:inline-block;background:#fff;text-align:center;'>{{uploadButtonText}}</text>
+    </view>
+</view>

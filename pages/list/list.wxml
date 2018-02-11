@@ -1,0 +1,170 @@
+<view wx:if='{{pageshow}}' class='container' style='width:{{W}}px;height:{{H}}px;'>
+  <block wx:if='{{nothing}}'>
+    <view class='nonthing'>
+      <image catchtap='reflush' src='/images/forg-2.png' style='width:120px;height:100px;'></image>
+      <text style='font-size:14px;color:#666;'>没有了</text>
+    </view>
+  </block>
+  <block wx:for='{{list}}' wx:key='id'>
+    <view style=' border:1px solid #ccc;width:{{ItemW}}px;height:{{ItemW+30}}px;transition:transform 1000ms ease 0ms;transform:translate({{item.X}}px, {{item.Y}}px) rotate({{item.DEG}}deg);transform-origin:35% 60% 0px;' class='list-item' data-bookid='{{item.id}}'
+      data-idx='{{index}}' catchtouchstart='moveItemStart' catchtouchend='moveItemEnd' catchtouchmove='movingItem'>
+      <image mode='aspectFit' style='width:{{ItemW}}px;height:{{ItemW}}px;' src='{{item.bookCover}}'></image>
+      <text class='bookName' style='width:{{ItemW-9}}px;'>{{item.bookName}}</text>
+      <text class='updateTime'>{{item.createDate}}</text>
+      <image style='width:30px;height:30px;position: absolute; top: 5px; left: 5px;' wx:if='{{item.recommed == 1}}' src='/images/jx-1.png'></image>
+      <view class='flowNumber'>
+        <image src='/images/gift-2.png'></image>
+        <text>{{item.flows}}</text>
+      </view>
+    </view>
+  </block>
+  <view class='button-list'>
+
+    <form wx:if='{{hot==1}}' data-hot='0' report-submit bindsubmit='hotOrLast'>
+      <view class='wrap-button'>
+        <image style='height:30px;width:30px;' src='/images/new.png'></image>
+        <text style='margin-top:0px;'>最新</text>
+        <button form-type='submit'></button>
+      </view>
+    </form>
+
+    <form wx:else data-hot='1' report-submit bindsubmit='hotOrLast'>
+      <view class='wrap-button'>
+        <image style='height:30px;width:30px;' src='/images/hot.png'></image>
+        <text style='margin-top:0px;'>最热</text>
+        <button form-type='submit'></button>
+      </view>
+    </form>
+
+
+    <form wx:if='{{jx==1}}' data-jx='0' report-submit bindsubmit='jxSelected'>
+      <view class='wrap-button'>
+        <image style='height:25px;width:25px;' src='/images/jx-0.png'></image>
+        <text style='margin-top:0px;'>全部</text>
+        <button form-type='submit'></button>
+      </view>
+    </form>
+    <form wx:else data-jx='1' report-submit bindsubmit='jxSelected'>
+      <view class='wrap-button'>
+        <image style='height:25px;width:25px;' src='/images/jx-1.png'></image>
+        <text style='margin-top:0px;'>精选</text>
+        <button form-type='submit'></button>
+      </view>
+    </form>
+
+  </view>
+  <view wx:if='{{ForgNewYear}}' class='button-list-reflush' style='right: 60px;'>
+    <!--<image catchtap='showActivity' src='/images/gift_icon.png'></image>-->
+    <form  report-submit bindsubmit='goBainian'>
+      <view class='wrap-button'>
+        <image style='height:25px;width:25px;' src='/images/happy-newyear-icon.png'></image>
+        <text style='margin-top:0px;'>拜年</text>
+        <button form-type='submit'></button>
+      </view>
+    </form>
+  </view>
+  <view class='button-list-reflush'>
+    <form report-submit bindsubmit='showActivity'>
+      <view class='wrap-button'>
+        <image style='height:25px;width:25px;' src='/images/gift_icon.png'></image>
+        <text style='margin-top:0px;'>参加比赛</text>
+        <button form-type='submit'></button>
+      </view>
+    </form>
+  </view>
+  <view class='button-create'>
+    <form bindsubmit='goCreate' report-submit>
+      <view class='wrap-button'>
+        <image src='/images/create.png'></image>
+        <text>去创作读本吧</text>
+        <button form-type='submit'></button>
+      </view>
+    </form>
+  </view>
+
+  <view class='button-play-music'>
+    <image wx:if='{{music.play}}' catchtap='stopMusic' src='/images/playing.png'></image>
+    <image wx:else catchtap='playMusic' src='/images/play.png'></image>
+    <view class='button-play-music-1'>
+      <block wx:if='{{music.play}}'>
+        <view class='musicSound' style='left: 10px;transform:scaleY({{musicSoundScaleY1}});'></view>
+        <view class='musicSound' style='left: 25px;transform:scaleY({{musicSoundScaleY2}});'></view>
+        <view class='musicSound' style='left: 40px;transform:scaleY({{musicSoundScaleY3}});'></view>
+        <view class='musicSound' style='left: 55px;transform:scaleY({{musicSoundScaleY4}});'></view>
+        <view class='musicSound' style='left: 70px;transform:scaleY({{musicSoundScaleY5}});'></view>
+        <view class='musicSound' style='left: 85px;transform:scaleY({{musicSoundScaleY6}});'></view>
+        <view class='musicSound' style='left: 100px;transform:scaleY({{musicSoundScaleY7}});'></view>
+      </block>
+      <text wx:if='{{music.replay}}' style='position: absolute;right:30px;top:10px;'>加载中...</text>
+      <autocompleteadv wx:if='{{music && music.musicsList && music.musicsList.length > 0 }}' required style='width:{{W-40}}px;' bind:item-selected='selectedMusic' selectedId='{{music.selectedId}}' type='static' source='{{music.musicsList}}'></autocompleteadv>
+    </view>
+  </view>
+  <!--
+    <view class='huanbian' animation='{{flowSlowMoveData1}}' style='top:-50px;left:0px;'>
+    <image mode='widthFix' style='width:30px;' src='{{sprite1}}'></image>
+  </view>
+  <view class='huanbian' animation='{{flowSlowMoveData2}}' style='top:-50px;left:0px;'>
+    <image mode='widthFix' style='width:30px;' src='{{sprite2}}'></image>
+  </view>
+
+  <view class='huanbian' animation='{{flowSlowMoveData3}}' style='top:-50px;left:0px;'>
+    <image mode='widthFix' style='width:30px;' src='{{sprite3}}'></image>
+  </view>
+  <view class='huanbian' animation='{{flowSlowMoveData4}}' style='top:-50px;left:0px;'>
+    <image mode='widthFix' style='width:30px;' src='{{sprite4}}'></image>
+  </view>
+  -->
+  <view class='huanbian' animation='{{flowSlowMoveData}}' style='bottom:20px;right:10px;z-index:-2;'>
+    <image mode='widthFix' style='width:30px;' src='/images/huaban-1.png'></image>
+  </view>
+  <view class='huanbian' animation='{{flowSlowMoveData}}' style='bottom:100px;right:20px;z-index:-2;'>
+    <image mode='widthFix' style='width:10px;' src='/images/huaban-2.png'></image>
+  </view>
+  <view class='huanbian' animation='{{flowSlowMoveData}}' style='bottom:70px;right:30px;z-index:-2;'>
+    <image mode='widthFix' style='width:15px;' src='/images/huaban-1.png'></image>
+  </view>
+  <view class='huanbian' animation='{{flowSlowMoveData}}' style='bottom:5px;left:10px;z-index:-2;'>
+    <image mode='widthFix' style='width:30px;' src='/images/huaban-2.png'></image>
+  </view>
+  <view class='huanbian' animation='{{flowSlowMoveData}}' style='bottom:50px;left:20px;z-index:-2;'>
+    <image mode='widthFix' style='width:10px;' src='/images/huaban-2.png'></image>
+  </view>
+  <view class='huanbian' animation='{{flowSlowMoveData}}' style='bottom:80px;left:30px;z-index:-2;'>
+    <image mode='widthFix' style='width:15px;' src='/images/huaban-2.png'></image>
+  </view>
+  <view class='huanbian' animation='{{recodTimeDownAnimationData}}' style='left:50%;top:50%;opacity:0;z-index:-2;'>
+    <text style='color:#FF4F00;'>{{time}}</text>
+  </view>
+</view>
+
+<view class='activity-mask' style='width:{{W}}px;height:{{H}}px;' wx:if='{{showActivity && !activity.closed}}'>
+  <view class='activity-mask-1' style='width:{{W-20}}px;height:{{H-80}}px;'>
+    <image class='gift-icon-1' src='/images/gift_icon.png'></image>
+    <image class='gift-icon' src='/images/gift_icon.png'></image>
+    <text class='gift-title' style='width:{{W-40}}px;margin-left:{{20-W/2}}px;'>{{activity.title}}</text>
+    <image class='gift-icon-2' style='margin-left:-60px;' src='/images/xiaoqingwa.jpg'></image>
+    <image class='gift-icon-3' src='/images/gift-2.png'></image>
+
+    <form class='gift-icon-4' style='margin-left:-25px;' report-submit bindsubmit='closeActivity'>
+      <view class='wrap-button'>
+        <image style='height:30px;width:30px;' src='/images/error_icon.png'></image>
+        <button form-type='submit'></button>
+      </view>
+    </form>
+
+    <text class='gift-title-1' style=''>活动介绍</text>
+    <scroll-view scroll-y style='width:{{W-20}}px;height:{{H-80-120-130}}px;' class='gift-scroll'>
+      <view class='gift-scroll-view'>
+        <text wx:for='{{activity.desc}}' wx:key='{{id}}'>{{item}}</text>
+      </view>
+    </scroll-view>
+
+    <form class='gift-title-2' style='margin-left:-50px;' report-submit bindsubmit='goActivityList'>
+      <view class='wrap-button' style='position:relative;width:100px;'>
+        <button form-type='submit' style='width:100px;'></button>
+        <text style='margin-top:-25px;font-size:16px;color:#fff;'>去参加</text>
+      </view>
+    </form>
+
+  </view>
+</view>

@@ -1,0 +1,76 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "wxecaa3ad929e8dfd1",
+	"projectname": "happy_forg",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "颜色方案",
+					"pathName": "pages/color/color",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "create",
+					"pathName": "pages/create/create",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "book",
+					"pathName": "pages/index/index",
+					"query": "bookId=57&shareUserId=1789111"
+				},
+				{
+					"id": 3,
+					"name": "activity",
+					"pathName": "pages/activity/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "拜年",
+					"pathName": "pages/bainian/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的祝福榜",
+					"pathName": "pages/bainian/mylist",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "送福",
+					"pathName": "pages/bainian/detail",
+					"query": "id=9"
+				}
+			]
+		}
+	}
+}

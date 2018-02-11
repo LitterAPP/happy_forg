@@ -1,0 +1,63 @@
+.item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  margin-left:10px; 
+  padding-right: 10px;
+  border-left: 2px solid #d4237a;
+}
+.tag-image{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  left: 0px;
+}
+.time-dot{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: -10px;
+}
+.right-arrow{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  margin-top:-15px; 
+  right:20px;
+}
+.book-cover{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 0px;
+  left: 10px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+.activity-time{
+  position: absolute; 
+  top: 0px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #666;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 2px 2px;
+  margin-top:5px; 
+}
+.book-title{
+  position: absolute; 
+  bottom: 0px;
+  left: 10px; 
+  background: rgba(255, 255, 255, 0.6);
+  color: #000;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 2px 2px; 
+  margin:5px; 
+}

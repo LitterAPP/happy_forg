@@ -1,0 +1,31 @@
+<view class='container1'>
+  <view class='item' style='width:{{itemW}}px;'>
+    <text class='nickName'>我是{{item.nickName}}</text>
+    <text class='desc1'>给您拜年了!</text>
+    <text class='desc2'>请收听我的新春祝福吧~</text>
+    <image class='avatar' style='width:40px;height:40px;border-radius: 50%;' src='{{item.avatar}}'></image>
+    <image class='bgimg' style='width:{{itemW}}px;height:{{(itemW)*1.8}}px;' src='{{item.url}}'></image>
+    <text data-recordurl='{{item.recordUrl}}' class='recordBtn' catchtap='playVoice'>听我的祝福</text> 
+    <block wx:if='{{item.userId != userinfo.id}}'>
+      <text wx:if='{{item.id == currentReplayId}}' data-recordid='{{item.id}}' class='replayBtn' catchtap='recordEnd'>{{recordBtnText}}</text>
+      <text wx:else data-recordid='{{item.id}}' class='replayBtn' catchtap='recordStart'>回福</text>
+    </block>
+    <button wx:if='{{item.userId == userinfo.id}}' class='shareBtn' data-id='{{item.id}}' open-type='share'>送福</button>
+    <form wx:else report-submit bindsubmit='sendZhufu' data-id='{{item.id}}'>
+      <button class='shareBtn' form-type='submit'>送福</button>
+    </form>
+  </view>
+  <scroll-view scroll-x='{{true}}'>
+    <view class='scroll-item' style='height:100px;' wx:for='{{item.replays}}' wx:key='{{id}}' wx:for-item='replay'>
+      <text class='o-nick-name'>{{replay.nickName}}</text>
+      <image class='o-avatar' src='{{replay.avatar}}'></image>
+      <text class='o-btn' data-recordurl='{{replay.voice}}' catchtap='playVoice'>听Ta的祝福</text>
+      <text class='o-time'>{{replay.time}}</text>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='bgmusic'>
+   <image wx:if='{{playingBgMusic}}' catchtap='stopBgMusic' src='/images/music.png'></image>
+   <image wx:else catchtap='playBgMusic' src='/images/music-0.png'></image>
+</view>

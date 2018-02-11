@@ -1,0 +1,53 @@
+<!--pages/create/create.wxml-->
+<form wx:if='{{pageshow}}' bindsubmit='formSumbit' report-submit>
+  <view class='card'>
+    <view class='card-title'>读本名称</view>
+    <view class='card-content'>
+      <input style='width:{{W}}px' name='bookName' value='{{bookName}}' type='text' maxlength='200' placeholder='请输入读本名称'></input>
+    </view>
+  </view>
+  <view class='card'>
+    <view class='card-title'>背景音乐</view>
+    <view class='card-content'>
+      <view class='button-play-music'>
+        <image wx:if='{{music.play}}' catchtap='stopMusic' src='/images/playing.png'></image>
+        <image wx:else catchtap='playMusic' src='/images/play.png'></image>
+        <view class='button-play-music-1'>
+          <block wx:if='{{music.play}}'>
+            <view class='musicSound' style='left: 10px;transform:scaleY({{musicSoundScaleY1}});'></view>
+            <view class='musicSound' style='left: 25px;transform:scaleY({{musicSoundScaleY2}});'></view>
+            <view class='musicSound' style='left: 40px;transform:scaleY({{musicSoundScaleY3}});'></view>
+            <view class='musicSound' style='left: 55px;transform:scaleY({{musicSoundScaleY4}});'></view>
+            <view class='musicSound' style='left: 70px;transform:scaleY({{musicSoundScaleY5}});'></view>
+            <view class='musicSound' style='left: 85px;transform:scaleY({{musicSoundScaleY6}});'></view>
+            <view class='musicSound' style='left: 100px;transform:scaleY({{musicSoundScaleY7}});'></view>
+          </block>
+           <text wx:if='{{music.replay}}' style='position: absolute;right:30px;top:10px;'>加载中...</text>
+          <autocompleteadv  wx:if='{{music && music.musicsList && music.musicsList.length > 0 }}'  required style='width:{{W-40}}px;' bind:item-selected='selectedMusic' selectedId='{{music.selectedId}}' type='static' source='{{music.musicsList}}'></autocompleteadv>
+          
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='card'>
+    <view class='card-title'>读本封面</view>
+    <view class='card-content'>
+      <uploadImg h='{{W}}' deleteImgSrc='/images/clean.png' groups='{{covers}}' admin w='{{W}}' max='1' uploadButtonText='上传封面({{W}}x{{W}})' bind:item-changed='coverImgChanged'></uploadImg>
+    </view>
+  </view>
+  <view class='card'>
+    <view class='card-title'>读本内容图片(最多30张)</view>
+    <view class='card-content'>
+      <uploadImg h='{{W}}' deleteImgSrc='/images/clean.png' groups='{{shots}}' admin w='{{W}}' max='30' uploadButtonText='上传读本图片({{W}}x{{W}})' bind:item-changed='shotsImgChanged'></uploadImg>
+    </view>
+  </view>
+
+  <view class='blank'></view>
+  <view class='fix-bottom'>
+    <view class='wrap-button'>
+      <image src='/images/done.png'></image>
+      <button plain='{{true}}' form-type='submit'></button>
+      <text>发表</text>
+    </view>
+  </view>
+</form>

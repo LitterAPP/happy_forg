@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/list/list",
+    "pages/index/index",
+    "pages/color/color",
+    "pages/create/create",
+    "pages/activity/list",
+    "pages/bainian/index",
+    "pages/bainian/mylist",
+    "pages/bainian/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "小青蛙读本",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "downloadFile": 10000
+  }
+}

@@ -1,0 +1,119 @@
+/**app.wxss**/
+page{
+  
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.blank{
+  height: 50px;
+}
+
+.fix-bottom{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  background: #fff;
+  border-top:1px solid #ccc; 
+  z-index: 999; 
+}
+
+.wrap-button{
+  height: 40px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin: 0px 0px;
+}
+.wrap-button image{
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 0px;
+}
+.wrap-button text{
+  font-size: 12px;
+  color:#949491;
+  position: absolute;
+  top: 25px;
+}
+.wrap-button button{
+  height: 40px;
+  width: 30px;
+   margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px; 
+  position: absolute;
+  top: 0px;
+  opacity: 0;
+  z-index: 99;
+}
+.wrap-button button::after{
+  border: 0px; 
+}
+
+
+
+.button-play-music{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  align-content: center;
+  align-items: center; 
+  justify-content: flex-start;
+  border-top: 1px solid #ccc;
+  bottom: 0px;
+  left: 0px; 
+  padding: 3px 5px;
+  background: rgba(255, 255, 255, 0.4);
+}
+.button-play-music-1{
+  display: flex; 
+  flex-direction: row;
+  align-content: flex-start;
+  align-items: flex-start;  
+  margin-left: 5px;
+  position: relative;
+}
+.button-play-music-1 text{
+  font-size: 13px;
+  overflow: hidden;
+  white-space:  nowrap;
+  text-overflow:ellipsis;
+}
+.musicLoading{
+  font-size: 12px;
+  color: #666;
+  position: absolute;
+  top: 8px;
+  right: 35px;
+}
+.button-play-music image{
+  height: 30px;
+  width: 30px;
+}
+
+
+.musicSound{
+  width: 10px;
+  height: 5px;
+  background: rgba(255, 79, 0, 0.7);
+  position: absolute;
+  bottom: 0px;
+  transition:transform 500ms ease 0ms;  
+  transform-origin:100% 100% 0px;
+}

@@ -1,0 +1,48 @@
+page{
+  background: #e7e7eb;
+}
+.card{
+  margin-top: 10px;
+}
+.card-title{
+  display: flex;
+  
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2px 5px;  
+  color: #515151;
+  font-size: 12px; 
+  margin-bottom: 5px;
+}
+.card-title text{
+  color: #ccc;
+  font-size: 14px;
+}
+.card-content{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+}
+.card-content input{
+  height: 35px;
+  padding: 0px 5px;
+  color: #000; 
+}
+
+
+.button-play-music{
+  position:inherit;
+  display: flex; 
+  flex-direction: row;
+  align-content: center;
+  align-items: center; 
+  justify-content: flex-start; 
+  padding: 3px 5px;
+  background: #fff;
+  border: 0px;
+} 

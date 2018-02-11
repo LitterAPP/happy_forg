@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "uploadImg": "/comp/uploadImg",
+    "autocompleteadv": "/comp/autocomplete/autocompleteadv"
+  },  
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "创作读本",
+  "navigationBarTextStyle": "black"
+}

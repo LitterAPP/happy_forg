@@ -1,0 +1,224 @@
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.list-item{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;   
+  background: #fff; 
+  box-shadow:1px 0px 1px #888;
+  overflow: hidden;
+}
+.bookName{
+  position: absolute;
+  bottom:  0px;
+  left: 0px;  
+  font-size: 16px;
+  color: #000;
+  height: 30px;
+  /*background: rgba(24,138,0,0.5);*/
+  background: #fff;
+  line-height: 30px;
+  padding: 5px;    
+}
+.updateTime{
+  position: absolute;
+  bottom: 40px;
+  right: 0px;   
+  font-size: 13px;
+  color: #ccc;     
+  background: rgba(255, 255, 255, 0);
+  border-radius: 3px;
+  padding: 5px; 
+}
+
+.flowNumber{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 5px;
+  right: 5px;    
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+.flowNumber image{
+  height: 30px;
+  width: 30px;
+}
+.flowNumber text{
+  color: #000;
+  font-size: 13px;
+}
+
+.button-list{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  top: 10px;
+  left: 10px;
+}
+.button-list image{
+  height: 40px;
+  width: 40px;
+}
+
+.button-list-reflush{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  top: 10px;
+  right: 10px;
+}
+.button-list-reflush image{
+  height: 40px;
+  width: 40px;
+}
+.button-create{
+   display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  bottom: 50px;
+  left: 50%;
+  width: 200px;
+  margin-left:-100px;
+}
+.nonthing{
+   display: flex;
+  position:absolute; 
+  flex-direction: column;
+  align-content: center;
+  align-items: center;   
+  left: 50%;
+  width: 200px;
+  margin-left:-100px;
+} 
+.huanbian{
+  position: absolute;  
+}
+
+.activity-mask{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999;
+}
+.activity-mask-1{
+  position: relative;
+  background: rgba(255, 255, 255, 1);
+  align-self: center;
+  margin-top: 40px;
+  border-radius: 20px;
+}
+.gift-icon{
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  top:-20px;
+  left: -10px;
+}
+.gift-icon-1{
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  top:-20px;
+  right: -10px;
+  transform: rotate(90deg);
+}
+.gift-icon-2{
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  top:60px;
+  left: 50%;
+  border-radius: 50%;
+  border:2px solid #fff;
+}
+.gift-title{
+  font-size: 18px;
+  color: #FF4040;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top:30px;
+  left: 50%;
+}
+
+.gift-icon-3{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top:180px;
+  left: 10px; 
+}
+.gift-icon-4{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  bottom:-35px;
+  left: 50%; 
+}
+.gift-title-1{
+  font-size: 14px;
+  color: #FF4040;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top:185px;
+  left: 40px;
+}
+
+.gift-title-2{
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  position: absolute;
+  bottom:5px;
+  left: 50%;
+  border-radius: 20px;
+  background: #FF4040;
+  height: 30px;
+  line-height: 30px;
+}
+.gift-scroll{
+  position: absolute;
+  top:210px;
+  left: 0px;
+}
+
+.gift-scroll-view{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin:12px; 
+  color: #000;
+  font-size: 13px;
+}
+.gift-scroll-view text{
+  padding: 3px 0px;  
+}
