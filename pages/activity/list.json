@@ -1,1 +1,6 @@
-{}
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTitleText": "小青蛙朗读赛事",
+  "navigationBarTextStyle": "black"
+}

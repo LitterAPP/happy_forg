@@ -2,7 +2,7 @@ import Upload from '../../utils/upload.js'
 const util = require('../../utils/util.js')
 import Download from '../../utils/download.js'
 const app = getApp()
-var W, H
+var W, H,id
 var player = wx.createInnerAudioContext()
 player.autoplay = true
 player.obeyMuteSwitch = false  

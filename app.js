@@ -1,11 +1,17 @@
 App({   
-  onLaunch: function () { 
+  onLaunch: function (options) { 
+    if (options && options.referrerInfo && options.referrerInfo.extraData){      
+      var param = JSON.parse(options.referrerInfo.extraData)
+      console.log('from other app',param.session)
+      wx.setStorageSync('session', param.session)
+    }
+    
   },  
   bgmusicplayer: wx.getBackgroundAudioManager(),
   innerAudioContext: wx.createInnerAudioContext(),
   globalData: {     
-    appid: 'wxecaa3ad929e8dfd1',
-    //host: 'http://192.168.31.144:9020'
+    appid: 'wx415d725aa7a75c7e',
+    //host: 'http://192.168.0.184:9020'
     host: 'https://91loving.cn/proxy/cook'
   }
 })

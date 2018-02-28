@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
-	"appid": "wxecaa3ad929e8dfd1",
+	"appid": "wx415d725aa7a75c7e",
 	"projectname": "happy_forg",
 	"isGameTourist": false,
 	"condition": {
@@ -26,7 +26,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -69,6 +69,29 @@
 					"name": "送福",
 					"pathName": "pages/bainian/detail",
 					"query": "id=9"
+				},
+				{
+					"id": -1,
+					"name": "活动列表",
+					"pathName": "pages/activity/list",
+					"query": "id=9"
+				},
+				{
+					"id": -1,
+					"name": "tmp",
+					"pathName": "pages/tmp/index",
+					"query": ""
+				},
+				{
+					"id": 9,
+					"name": "小程序打开",
+					"pathName": "pages/list/list",
+					"query": "",
+					"scene": "1037",
+					"referrerInfo": {
+						"appId": "wxecaa3ad929e8dfd1",
+						"extraData": "{\"session\":\"1234\"}"
+					}
 				}
 			]
 		}

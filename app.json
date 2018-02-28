@@ -1,18 +1,19 @@
 {
-  "pages": [
-    "pages/list/list",
-    "pages/index/index",
-    "pages/color/color",
-    "pages/create/create",
-    "pages/activity/list",
-    "pages/bainian/index",
-    "pages/bainian/mylist",
-    "pages/bainian/detail"
+  "pages": [    
+      "pages/list/list",
+      "pages/index/index",
+      "pages/color/color",
+      "pages/create/create",
+      "pages/activity/list",
+      "pages/bainian/index",
+      "pages/bainian/mylist",
+      "pages/bainian/detail",
+      "pages/tmp/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFFFFF",
-    "navigationBarTitleText": "小青蛙读本",
+    "navigationBarTitleText": "小青蛙",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {
